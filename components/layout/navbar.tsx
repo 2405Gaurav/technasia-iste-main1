@@ -21,9 +21,9 @@ const navLinks = [
   { title: "Timeline", href: "timeline" },
   { title: "Competitions", href: "competitions" },
   { title: "Sponsors", href: "sponsors" },
+  { title: "Registration", href: "register", special: true },
   { title: "Previous Events", href: "previous-events" },
   { title: "FAQs", href: "faqs" },
-  { title: "Registration", href: "register", special: true },
 ];
 
 export function Navbar() {
@@ -46,7 +46,6 @@ export function Navbar() {
           ? "bg-background/90 backdrop-blur-md shadow-lg py-3"
           : "bg-transparent py-5"
       )}
-      role="banner"
     >
       <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8">
         <ScrollLink
@@ -56,8 +55,6 @@ export function Navbar() {
           offset={-100}
           duration={500}
           className="flex items-center gap-2 cursor-pointer select-none"
-          aria-label="Go to Home section"
-          tabIndex={0}
         >
           <span
             className={cn(
@@ -70,11 +67,7 @@ export function Navbar() {
           </span>
         </ScrollLink>
 
-        <nav
-          className="hidden md:flex items-center space-x-8"
-          role="navigation"
-          aria-label="Primary navigation"
-        >
+        <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map(({ title, href, special }) =>
             special ? (
               <ScrollLink
@@ -87,11 +80,8 @@ export function Navbar() {
                 className={cn(
                   "px-6 py-2 rounded-full font-semibold text-white transition-all cursor-pointer select-none flex items-center justify-center",
                   "bg-gradient-to-r from-blue-600 to-purple-700 shadow-lg hover:from-blue-700 hover:to-purple-800",
-                  "hover:shadow-xl active:scale-95 text-sm md:text-base",
-                  // underline for special button (maybe no underline for button? You can add if you want)
+                  "hover:shadow-xl active:scale-95 text-sm md:text-base"
                 )}
-                tabIndex={0}
-                aria-current="page"
               >
                 {title}
               </ScrollLink>
@@ -104,14 +94,10 @@ export function Navbar() {
                 offset={-100}
                 duration={500}
                 className={cn(
-                  "text-sm font-medium transition-colors cursor-pointer select-none flex items-center",
-                  "border-b-2 border-transparent", // base underline invisible
-                  "hover:border-primary", // underline on hover
-                  "active:scale-95",
+                  "text-sm font-medium transition-colors hover:text-primary cursor-pointer select-none flex items-center",
+                  "active:scale-95"
                 )}
-                activeClass="border-primary text-primary" // active underline and text color
-                tabIndex={0}
-                aria-current="page"
+                activeClass="text-primary"
               >
                 {title}
               </ScrollLink>
@@ -124,39 +110,17 @@ export function Navbar() {
             variant="ghost"
             size="icon"
             aria-label="Toggle theme"
-            className="relative rounded-full"
+            className="rounded-full"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           >
-            <Sun
-              className={cn(
-                "h-5 w-5 transition-all duration-300 absolute inset-0 m-auto",
-                theme === "light"
-                  ? "opacity-100 scale-100 rotate-0"
-                  : "opacity-0 scale-75 rotate-45 pointer-events-none"
-              )}
-              aria-hidden="true"
-            />
-            <Moon
-              className={cn(
-                "h-5 w-5 transition-all duration-300 absolute inset-0 m-auto",
-                theme === "dark"
-                  ? "opacity-100 scale-100 rotate-0"
-                  : "opacity-0 scale-75 rotate-45 pointer-events-none"
-              )}
-              aria-hidden="true"
-            />
+            <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           </Button>
 
-          {/* Mobile menu */}
           <div className="block md:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  aria-label="Open menu"
-                  className="p-2"
-                >
+                <Button variant="ghost" size="icon" aria-label="Menu" className="p-2">
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
@@ -166,11 +130,7 @@ export function Navbar() {
                     Menu
                   </SheetTitle>
                 </SheetHeader>
-                <nav
-                  className="flex flex-col mt-8 space-y-4"
-                  role="navigation"
-                  aria-label="Mobile navigation"
-                >
+                <nav className="flex flex-col mt-8 space-y-4">
                   {navLinks.map(({ title, href, special }) =>
                     special ? (
                       <ScrollLink
@@ -185,8 +145,6 @@ export function Navbar() {
                           "bg-gradient-to-r from-blue-600 to-purple-700 shadow-md hover:from-blue-700 hover:to-purple-800",
                           "active:scale-95 transition-transform cursor-pointer flex items-center justify-center"
                         )}
-                        tabIndex={0}
-                        aria-current="page"
                       >
                         {title}
                       </ScrollLink>
@@ -199,14 +157,10 @@ export function Navbar() {
                         offset={-100}
                         duration={500}
                         className={cn(
-                          "text-base font-medium transition-colors cursor-pointer select-none flex items-center",
-                          "border-b-2 border-transparent",
-                          "hover:border-primary",
+                          "text-base font-medium transition-colors hover:text-primary px-3 py-2 rounded-md cursor-pointer select-none flex items-center",
                           "active:scale-95"
                         )}
-                        activeClass="border-primary text-primary"
-                        tabIndex={0}
-                        aria-current="page"
+                        activeClass="bg-secondary text-primary"
                       >
                         {title}
                       </ScrollLink>
