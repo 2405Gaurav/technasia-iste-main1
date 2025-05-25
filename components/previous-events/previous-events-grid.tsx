@@ -97,7 +97,7 @@ export function PreviousEventsGrid() {
                             </div>
                           </div>
                           <p className="text-sm italic text-muted-foreground">
-                            "{testimonial.quote}"
+                            &quot;{testimonial.quote}&quot;
                           </p>
                         </CardContent>
                       </Card>

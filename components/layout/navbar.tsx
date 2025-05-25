@@ -21,9 +21,9 @@ const navLinks = [
   { title: "Timeline", href: "timeline" },
   { title: "Competitions", href: "competitions" },
   { title: "Sponsors", href: "sponsors" },
-  { title: "Registration", href: "register", special: true },
   { title: "Previous Events", href: "previous-events" },
   { title: "FAQs", href: "faqs" },
+  { title: "Registration", href: "register", special: true },
 ];
 
 export function Navbar() {
