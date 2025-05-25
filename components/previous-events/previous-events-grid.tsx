@@ -94,7 +94,9 @@ export function PreviousEventsGrid() {
                               <p className="text-xs text-muted-foreground">{testimonial.role}</p>
                             </div>
                           </div>
-                          <p className="text-sm italic text-muted-foreground">&quot;{testimonial.quote}&quot;</p>
+                          <p className="text-sm italic text-muted-foreground">
+                            "{testimonial.quote}"
+                          </p>
                         </CardContent>
                       </Card>
                     ))}

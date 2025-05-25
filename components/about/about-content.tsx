@@ -117,7 +117,8 @@ export function AboutContent() {
   return (
     <div ref={containerRef} className="py-16 bg-card/50">
       <div className="container max-w-5xl mx-auto px-4 text-center">
-        <h1 className="text-4xl font-bold mb-6">About TECHNASIA@aspos25</h1>
+       <h1 className="text-4xl font-bold mb-6">About TECHNASIA&rsquo;25</h1>
+
         <p className="text-muted-foreground text-lg max-w-3xl mx-auto mb-12">
           TECHNASIA@aspos25 is India@asposs premier national-level hackathon, a celebration of innovation and technological excellence. It
           stands as a testament to the incredible tech talent flourishing across our nation, bringing together the brightest minds from every
