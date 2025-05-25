@@ -21,9 +21,9 @@ const navLinks = [
   { title: "Timeline", href: "timeline" },
   { title: "Competitions", href: "competitions" },
   { title: "Sponsors", href: "sponsors" },
-  { title: "Registration", href: "register", special: true },
   { title: "Previous Events", href: "previous-events" },
   { title: "FAQs", href: "faqs" },
+  { title: "Registration", href: "register", special: true },
 ];
 
 export function Navbar() {
@@ -56,6 +56,15 @@ export function Navbar() {
           duration={500}
           className="flex items-center gap-2 cursor-pointer select-none"
         >
+           <span
+            className={cn(
+              "text-primary",
+              "font-extrabold text-3xl sm:text-4xl tracking-wide",
+              "drop-shadow-md"
+            )}
+          >
+            {siteConfig.organisation}
+          </span>
           <span
             className={cn(
               "text-primary",

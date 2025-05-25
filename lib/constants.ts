@@ -1,5 +1,9 @@
+import { picture } from "framer-motion/client";
+
 export const siteConfig = {
   name: "TECHNASIA'25",
+  organisation:"ISTE    ",
+  
   description: "The biggest tech fest of Asia - Where Innovation Meets Opportunity",
   date: "SEPT 13-16, 2025",
   venue: "CHANDIGARH UNIVERSITY,MOHALI",
