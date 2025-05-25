@@ -145,7 +145,7 @@ export function AboutContent() {
         >
           <CardContent className="p-0">
             <p className="text-xl font-semibold text-muted-foreground">
-              TECHNASIA'25 celebrates India, its developers, and their spirit of innovation.
+              TECHNASIA@apos;25 celebrates India, its developers, and their spirit of innovation.
             </p>
           </CardContent>
         </Card>
