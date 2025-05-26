@@ -6,7 +6,7 @@ import { SponsorsPreview } from "@/components/home/sponsors-preview";
 import { AboutContent } from "@/components/about/about-content";
 import { TeamSection } from "@/components/about/team-section";
 import { TimelineComponent } from "@/components/timeline/timeline-component";
-import { CompetitionGrid } from "@/components/competitions/competition-grid";
+// import { CompetitionGrid } from "@/components/competitions/competition-grid";
 import { SponsorsGrid } from "@/components/sponsors/sponsors-grid";
 import { RegistrationForm } from "@/components/register/registration-form";
 import { PreviousEventsGrid } from "@/components/previous-events/previous-events-grid";
@@ -32,21 +32,21 @@ export default function Home() {
         <TimelineComponent />
       </section>
       
-      <section id="competitions">
+      {/* <section id="competitions">
         <CompetitionGrid />
-      </section>
+      </section> */}
       
       <section id="sponsors">
         <SponsorsGrid />
       </section>
       
+      <section id="previous-events">
+        <PreviousEventsGrid />
+      </section>
       <section id="register">
         <RegistrationForm />
       </section>
       
-      <section id="previous-events">
-        <PreviousEventsGrid />
-      </section>
       
       <section id="faqs">
         <FaqAccordion />

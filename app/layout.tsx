@@ -8,9 +8,9 @@ import { Footer } from "@/components/layout/footer";
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "TECHNASIA'25 | Asia's Biggest Tech Festival",
+  title: "TECHNASIA'25 | India's Biggest Tech Festival",
   description:
-    "Join Asia's premier tech festival celebrating innovation, creativity, and entrepreneurship with competitions, workshops, and networking opportunities.",
+    "Join India's premier tech festival celebrating innovation, creativity, and entrepreneurship with competitions, workshops, and networking opportunities.",
 };
 
 export default function RootLayout({
