@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/constants"
 
 export function HeroSection() {
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-black">
+    <div className="relative min-h-screen flex items-center justify-center ">
       <div
         className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black"
         style={{ zIndex: 2 }}
