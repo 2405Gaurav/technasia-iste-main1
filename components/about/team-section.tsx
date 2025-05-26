@@ -64,7 +64,6 @@ const teamMembers = [
   },
 ];
 
-
 export function TeamSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
@@ -94,7 +93,7 @@ export function TeamSection() {
   };
 
   return (
-    <section className="py-20 bg-card/30 flex justify-center">
+    <section className="py-20  flex justify-center">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -103,8 +102,10 @@ export function TeamSection() {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-3xl font-bold mb-4">Meet the Team</h2>
-          <p className="text-muted-foreground">
+          <h2 className="text-3xl font-bold mb-4 text-green-400 drop-shadow-[0_0_6px_rgba(0,255,180,0.7)]">
+            Meet the Team
+          </h2>
+          <p className="text-green-300">
             The dedicated professionals behind TECHNASIA&apos;25 working to create an exceptional event experience.
           </p>
         </motion.div>
@@ -118,40 +119,51 @@ export function TeamSection() {
         >
           {teamMembers.map((member, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <Card className="group overflow-hidden border border-transparent bg-card/70 backdrop-blur-sm hover:shadow-xl hover:border-primary transition-all duration-300 rounded-2xl">
+              <Card
+                className="
+                  group overflow-hidden border border-green-500 bg-black/30 backdrop-blur-md
+                  hover:shadow-[0_0_20px_rgba(0,255,180,0.7)] hover:border-green-400
+                  transition-all duration-300 rounded-2xl
+                "
+              >
                 <div className="relative h-64 w-full overflow-hidden">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  {member.image ? (
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="flex items-center justify-center h-full bg-green-900/20 text-green-400 text-2xl font-bold">
+                      {member.name.charAt(0)}
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <div className="flex space-x-3">
                       <a
                         href={member.social.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary hover:text-primary/80 transition-colors"
+                        className="text-green-400 hover:text-green-300 transition-colors"
                       >
                         <Linkedin className="h-5 w-5" />
                       </a>
                       <a
-                        href={member.social.twitter}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:text-primary/80 transition-colors"
+                        href={`mailto:${member.social.email}`}
+                        className="text-green-400 hover:text-green-300 transition-colors"
                       >
-                       
                         <Mail className="h-5 w-5" />
                       </a>
                     </div>
                   </div>
                 </div>
                 <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                  <p className="text-primary text-sm mb-3">{member.role}</p>
-                  <p className="text-muted-foreground text-sm">{member.bio}</p>
+                  <h3 className="text-xl font-semibold mb-1 text-green-300 drop-shadow-[0_0_6px_rgba(0,255,180,0.7)]">
+                    {member.name}
+                  </h3>
+                  <p className="text-green-400 text-sm mb-3">{member.role}</p>
+                  <p className="text-green-200 text-sm">{member.bio}</p>
                 </CardContent>
               </Card>
             </motion.div>

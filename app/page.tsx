@@ -7,14 +7,16 @@ import { AboutContent } from "@/components/about/about-content";
 import { TeamSection } from "@/components/about/team-section";
 import { TimelineComponent } from "@/components/timeline/timeline-component";
 // import { CompetitionGrid } from "@/components/competitions/competition-grid";
-import { SponsorsGrid } from "@/components/sponsors/sponsors-grid";
+import SponsorGrid  from "@/components/sponsors/sponsors-grid";
 import { RegistrationForm } from "@/components/register/registration-form";
 import { PreviousEventsGrid } from "@/components/previous-events/previous-events-grid";
 import { FaqAccordion } from "@/components/faqs/faq-accordion";
+// import { ThemeWrapper } from "@/components/shared/theme-wrapper";
+import { ParticleWrapper } from "@/components/ParticleWrapper/ParticleWrapper";
 
 export default function Home() {
   return (
-    <>
+    <ParticleWrapper>
       <section id="home">
         <HeroSection />
       </section>
@@ -37,20 +39,20 @@ export default function Home() {
       </section> */}
       
       <section id="sponsors">
-        <SponsorsGrid />
+        <SponsorGrid />
       </section>
       
       <section id="previous-events">
         <PreviousEventsGrid />
       </section>
+
       <section id="register">
         <RegistrationForm />
       </section>
       
-      
       <section id="faqs">
         <FaqAccordion />
       </section>
-    </>
+    </ParticleWrapper>
   );
 }

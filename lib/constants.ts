@@ -54,13 +54,13 @@ export const navLinks = [
 
 export const competitions = [
   {
-    id: "hackathon",
-    title: "Hackathon",
+    id: "CUMUN",
+    title: "CU-MUN",
     description:
       "A 24-hour coding marathon where teams build innovative solutions to real-world problems.",
     longDescription: 
       "Join us for an exhilarating 24-hour coding marathon where teams of up to 4 members collaborate to create groundbreaking solutions to real-world challenges. Participants will have access to mentors, workshops, and resources to bring their ideas to life. This is your chance to showcase your technical skills, creativity, and problem-solving abilities while competing for substantial prizes.",
-    image: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg",
+    image: "/competition/mun.png",
     prize: "$5,000",
     date: "March 15-16, 2025",
     location: "Main Campus",
@@ -78,13 +78,13 @@ export const competitions = [
     ],
   },
   {
-    id: "coding-contest",
-    title: "Coding Contest",
+    id: "GAMING",
+    title: "GAME-X",
     description:
       "Test your problem-solving skills in this competitive programming challenge.",
     longDescription:
       "Challenge yourself in this intense competitive programming contest designed to test your algorithmic thinking and coding efficiency. Participants will face a series of increasingly difficult problems that must be solved under time constraints. The contest will cover data structures, algorithms, and mathematical concepts, providing a platform for coders to demonstrate their technical prowess.",
-    image: "https://images.pexels.com/photos/4974915/pexels-photo-4974915.jpeg",
+    image: "/competition/1.png",
     prize: "$2,500",
     date: "March 14, 2025",
     location: "Tech Building",
@@ -102,13 +102,13 @@ export const competitions = [
     ],
   },
   {
-    id: "ui-ux-challenge",
-    title: "UI/UX Challenge",
+    id: "ROBO",
+    title: "ROBO WAR",
     description:
       "Design intuitive and beautiful interfaces for next-generation applications.",
     longDescription:
       "Unleash your creativity in our UI/UX Challenge where participants design user-centered interfaces for real-world applications. You'll be given a design brief for a product or service, and your task will be to create an intuitive, accessible, and visually appealing user experience. This contest highlights the importance of design thinking and user research in creating digital products that truly meet user needs.",
-    image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg",
+    image: "/competition/4.png",
     prize: "$3,000",
     date: "March 14, 2025",
     location: "Design Lab",
@@ -126,13 +126,13 @@ export const competitions = [
     ],
   },
   {
-    id: "ai-ml-showcase",
-    title: "AI/ML Showcase",
+    id: "show",
+    title: "TECH ROAST SHOW",
     description:
       "Demonstrate innovative applications of artificial intelligence and machine learning.",
     longDescription:
       "The AI/ML Showcase invites participants to present cutting-edge applications of artificial intelligence and machine learning technologies. Whether it's a novel algorithm, an innovative use case, or an improvement to existing methods, this competition is your platform to demonstrate how AI can solve complex problems and create value. Projects will be evaluated based on innovation, technical implementation, practical applicability, and potential impact.",
-    image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
+    image: "/competition/5.png",
     prize: "$4,000",
     date: "March 15, 2025",
     location: "Innovation Center",
@@ -150,13 +150,13 @@ export const competitions = [
     ],
   },
   {
-    id: "startup-pitch",
-    title: "Startup Pitch",
+    id: "cft",
+    title: "CAPTURE THE FLAG",
     description:
       "Present your startup idea to a panel of investors and industry experts.",
     longDescription:
       "The Startup Pitch competition offers aspiring entrepreneurs the chance to present their business ideas to a panel of investors and industry experts. Participants will deliver a compelling pitch that covers their product, market opportunity, business model, and growth strategy. This is not just a competition but a platform to gain valuable feedback, networking opportunities, and potential investment for your venture.",
-    image: "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg",
+    image: "/competition/6.png",
     prize: "$10,000 Investment Opportunity",
     date: "March 16, 2025",
     location: "Business Center",

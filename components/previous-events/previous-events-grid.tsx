@@ -31,11 +31,11 @@ export function PreviousEventsGrid() {
   };
 
   return (
-    <section className="py-16 bg-background">
+    <section className="py-16  text-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-4">Previous Events</h1>
-          <p className="text-muted-foreground text-lg">
+          <h1 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Previous Events</h1>
+          <p className="text-lg text-gray-300">
             Explore the highlights and achievements from our past events.
           </p>
         </div>
@@ -55,29 +55,31 @@ export function PreviousEventsGrid() {
             >
               {/* Text Section */}
               <div className={index % 2 === 1 ? "lg:order-2" : "lg:order-1"}>
-                <Badge className="mb-4 bg-primary/80 hover:bg-primary">{event.year}</Badge>
-                <h2 className="text-3xl font-semibold mb-4">{event.title}</h2>
-                <p className="text-muted-foreground mb-6 text-base">{event.description}</p>
+                <Badge className="mb-4 bg-green-600 text-white hover:bg-green-700">
+                  {event.year}
+                </Badge>
+                <h2 className="text-3xl font-semibold mb-4 text-white">{event.title}</h2>
+                <p className="text-base text-gray-300 mb-6">{event.description}</p>
 
                 <div className="mb-8">
-                  <h3 className="text-lg font-semibold mb-3">Event Highlights</h3>
+                  <h3 className="text-lg font-semibold mb-3 text-white">Event Highlights</h3>
                   <ul className="space-y-2">
                     {event.highlights.map((highlight, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="h-2 w-2 mt-2 rounded-full bg-primary mr-3" />
-                        <span className="text-muted-foreground">{highlight}</span>
+                      <li key={i} className="flex items-start text-gray-300">
+                        <span className="h-2 w-2 mt-2 rounded-full bg-green-500 mr-3" />
+                        <span>{highlight}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">Testimonials</h3>
+                  <h3 className="text-lg font-semibold mb-4 text-white">Testimonials</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {event.testimonials.map((testimonial, i) => (
                       <Card
                         key={i}
-                        className="bg-card/50 backdrop-blur-sm border border-border hover:shadow-lg transition-all"
+                        className="bg-[#1a1a1a] border border-gray-700 hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
                       >
                         <CardContent className="p-4">
                           <div className="flex items-center mb-3">
@@ -90,11 +92,11 @@ export function PreviousEventsGrid() {
                               />
                             </div>
                             <div>
-                              <h4 className="font-medium text-sm">{testimonial.name}</h4>
-                              <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                              <h4 className="font-medium text-sm text-white">{testimonial.name}</h4>
+                              <p className="text-xs text-gray-400">{testimonial.role}</p>
                             </div>
                           </div>
-                          <p className="text-sm italic text-muted-foreground">
+                          <p className="text-sm italic text-gray-400">
                             &quot;{testimonial.quote}&quot;
                           </p>
                         </CardContent>
@@ -116,7 +118,7 @@ export function PreviousEventsGrid() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
               </div>
             </motion.div>
           ))}
