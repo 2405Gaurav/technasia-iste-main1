@@ -102,12 +102,13 @@ export function TimelineComponent() {
                   <button className="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded transition">
                     View Details
                   </button>
+                  
                 </Link>
               </div>
 
               {/* Image Section */}
               <div
-                className={`relative w-full h-[600px] rounded-xl overflow-hidden shadow-lg border-4 border-green-600 transition-transform duration-300 hover:scale-105 ${
+                className={`relative w-full h-[690px] rounded-xl overflow-hidden shadow-lg border-4 border-green-600 transition-transform duration-300 hover:scale-105 ${
                   index % 2 === 1 ? "lg:order-1" : "lg:order-2"
                 }`}
               >

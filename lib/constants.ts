@@ -58,7 +58,7 @@ export const competitions = [
     title: "CU-MUN",
     description:
       "A 24-hour coding marathon where teams build innovative solutions to real-world problems.",
-    longDescription: 
+    longDescription:
       "Join us for an exhilarating 24-hour coding marathon where teams of up to 4 members collaborate to create groundbreaking solutions to real-world challenges. Participants will have access to mentors, workshops, and resources to bring their ideas to life. This is your chance to showcase your technical skills, creativity, and problem-solving abilities while competing for substantial prizes.",
     image: "/competition/mun.png",
     prize: "$5,000",
@@ -66,6 +66,7 @@ export const competitions = [
     location: "Main Campus",
     registrationDeadline: "March 1, 2025",
     teamSize: "2-4 members",
+    allowsTeam: true,
     requirements: [
       "Laptop with necessary development tools",
       "Student ID or professional ID",
@@ -90,6 +91,7 @@ export const competitions = [
     location: "Tech Building",
     registrationDeadline: "March 1, 2025",
     teamSize: "Individual",
+    allowsTeam: false,
     requirements: [
       "Proficiency in at least one programming language",
       "Laptop with development environment",
@@ -114,6 +116,7 @@ export const competitions = [
     location: "Design Lab",
     registrationDeadline: "March 1, 2025",
     teamSize: "1-2 members",
+    allowsTeam: true,
     requirements: [
       "Design software (Figma, Adobe XD, or similar)",
       "Portfolio of previous work (optional)",
@@ -138,6 +141,7 @@ export const competitions = [
     location: "Innovation Center",
     registrationDeadline: "March 1, 2025",
     teamSize: "1-3 members",
+    allowsTeam: true,
     requirements: [
       "Project demonstration materials",
       "Documentation of methodology",
@@ -162,6 +166,7 @@ export const competitions = [
     location: "Business Center",
     registrationDeadline: "February 28, 2025",
     teamSize: "1-4 members",
+    allowsTeam: true,
     requirements: [
       "Business plan or pitch deck",
       "Prototype or MVP (if available)",
