@@ -149,7 +149,7 @@ export function AboutContent() {
         <h1 className="text-4xl font-bold mb-6 text-white">About TECHNASIA&rsquo;25</h1>
 
         <p className="text-muted-foreground text-lg max-w-3xl mx-auto mb-12 text-gray-200">
-          TECHNASIA@aspos25 is India&apos;s premier national-level hackathon, a celebration of innovation and technological excellence. It
+          TECHNASIA'25 is India&apos;s premier national-level hackathon, a celebration of innovation and technological excellence. It
           stands as a testament to the incredible tech talent flourishing across our nation, bringing together the brightest minds from every
           corner of India to forge solutions that resonate globally.
         </p>
@@ -179,7 +179,7 @@ export function AboutContent() {
 >
   <CardContent className="p-0">
     <p className="text-xl font-semibold text-green-400 drop-shadow-[0_0_6px_rgba(0,255,180,0.7)]">
-      TECHNASIA@apos;25 celebrates India, its developers, and their spirit of innovation.
+      TECHNASIA'25 celebrates India, its developers, and their spirit of innovation.
     </p>
   </CardContent>
 </Card>
