@@ -4,8 +4,6 @@ import { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { previousEvents } from "@/lib/constants";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
 export function PreviousEventsGrid() {
   const ref = useRef(null);
@@ -31,13 +29,10 @@ export function PreviousEventsGrid() {
   };
 
   return (
-    <section className="py-16  text-white">
+    <section className="py-16 text-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h1 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Previous Events</h1>
-          <p className="text-lg text-gray-300">
-            Explore the highlights and achievements from our past events.
-          </p>
         </div>
 
         <motion.div
@@ -45,81 +40,21 @@ export function PreviousEventsGrid() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="space-y-24"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {previousEvents.map((event, index) => (
             <motion.div
-              key={event.year}
+              key={index}
               variants={itemVariants}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
+              className="relative h-[300px] rounded-xl overflow-hidden shadow-lg border-2 border-green-400 hover:shadow-green-400/50 transition-all duration-300 hover:scale-105"
             >
-              {/* Text Section */}
-              <div className={index % 2 === 1 ? "lg:order-2" : "lg:order-1"}>
-                <Badge className="mb-4 bg-green-600 text-white hover:bg-green-700">
-                  {event.year}
-                </Badge>
-                <h2 className="text-3xl font-semibold mb-4 text-white">{event.title}</h2>
-                <p className="text-base text-gray-300 mb-6">{event.description}</p>
-
-                <div className="mb-8">
-                  <h3 className="text-lg font-semibold mb-3 text-white">Event Highlights</h3>
-                  <ul className="space-y-2">
-                    {event.highlights.map((highlight, i) => (
-                      <li key={i} className="flex items-start text-gray-300">
-                        <span className="h-2 w-2 mt-2 rounded-full bg-green-500 mr-3" />
-                        <span>{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-semibold mb-4 text-white">Testimonials</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {event.testimonials.map((testimonial, i) => (
-                      <Card
-                        key={i}
-                        className="bg-[#1a1a1a] border border-gray-700 hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
-                      >
-                        <CardContent className="p-4">
-                          <div className="flex items-center mb-3">
-                            <div className="relative h-10 w-10 rounded-full overflow-hidden mr-3">
-                              <Image
-                                src={testimonial.image}
-                                alt={testimonial.name}
-                                fill
-                                className="object-cover"
-                              />
-                            </div>
-                            <div>
-                              <h4 className="font-medium text-sm text-white">{testimonial.name}</h4>
-                              <p className="text-xs text-gray-400">{testimonial.role}</p>
-                            </div>
-                          </div>
-                          <p className="text-sm italic text-gray-400">
-                            &quot;{testimonial.quote}&quot;
-                          </p>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Image Section */}
-              <div
-                className={`relative h-[400px] w-full rounded-xl overflow-hidden shadow-md ${
-                  index % 2 === 1 ? "lg:order-1" : "lg:order-2"
-                }`}
-              >
-                <Image
-                  src={event.image}
-                  alt={event.title}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-              </div>
+              <Image
+                src={event.image}
+                alt={`Previous Event ${index + 1}`}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/30 hover:bg-black/10 transition-all duration-300" />
             </motion.div>
           ))}
         </motion.div>

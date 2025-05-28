@@ -3,6 +3,7 @@ import { picture } from "framer-motion/client";
 export const siteConfig = {
   name: "TECHNASIA'25",
   organisation:"ISTE    ",
+  logo:"/logo/logotechnisia.svg",
   
   description: "The biggest tech fest of Asia - Where Innovation Meets Opportunity",
   date: "SEPT 13-16, 2025",
@@ -305,80 +306,48 @@ export const timelineEvents = [
 export const previousEvents = [
   {
     year: "2024",
-    title: "TECHNASIA'24",
-    description: "Focused on sustainable technology and green innovation with over 5,000 participants.",
-    image: "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg",
-    highlights: [
-      "Launch of Green Tech Initiative",
-      "Panel discussions on sustainable development",
-      "Eco-friendly hackathon with record participation",
-    ],
-    testimonials: [
-      {
-        name: "Sarah Chen",
-        role: "Hackathon Winner",
-        quote: "TECHNASIA'24 was a life-changing experience that opened doors to incredible opportunities in the tech industry.",
-        image: "https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg",
-      },
-      {
-        name: "Rahul Sharma",
-        role: "Participant",
-        quote: "The workshops and networking opportunities were invaluable for my professional growth.",
-        image: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg",
-      },
-    ],
+    image: "/previous_events/1.jpg",
+    title: "Tech Fest 2024"
   },
   {
     year: "2023",
-    title: "TECHNASIA'23",
-    description: "Celebrated digital transformation and accessibility with interactive exhibitions.",
-    image: "https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg",
-    highlights: [
-      "Focus on inclusive technology",
-      "Virtual reality exhibitions",
-      "Accessibility hackathon for assistive technologies",
-    ],
-    testimonials: [
-      {
-        name: "Michael Wong",
-        role: "Sponsor Representative",
-        quote: "We were amazed by the talent and innovation showcased at TECHNASIA'23. Looking forward to future collaborations.",
-        image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg",
-      },
-      {
-        name: "Aisha Patel",
-        role: "Volunteer",
-        quote: "Being part of TECHNASIA'23 was an incredible learning experience that helped me grow both personally and professionally.",
-        image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg",
-      },
-    ],
+    image: "/previous_events/2.jpg",
+    title: "Innovation Summit"
+  },
+  {
+    year: "2023",
+    image: "/previous_events/3.jpg",
+    title: "AI Conference"
+  },
+  {
+    year: "2023",
+    image: "/previous_events/4.jpg",
+    title: "Robotics Workshop"
+  },
+  {
+    year: "2023",
+    image: "/previous_events/5.jpg",
+    title: "Cybersecurity Talk"
+  },
+  {
+    year: "2023",
+    image: "/previous_events/6.jpg",
+    title: "Blockchain Bootcamp"
+  },
+  {
+    year: "2023",
+    image: "/previous_events/7.jpg",
+    title: "IoT Expo"
   },
   {
     year: "2022",
-    title: "TECHNASIA'22",
-    description: "Explored the frontiers of AI and machine learning with cutting-edge demonstrations.",
-    image: "https://images.pexels.com/photos/3153198/pexels-photo-3153198.jpeg",
-    highlights: [
-      "AI research presentations",
-      "Robotics showcase",
-      "Machine learning workshops for beginners",
-    ],
-    testimonials: [
-      {
-        name: "David Kim",
-        role: "Speaker",
-        quote: "The enthusiasm and curiosity of participants at TECHNASIA'22 made it a truly memorable event to be part of.",
-        image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
-      },
-      {
-        name: "Emma Johnson",
-        role: "Competition Winner",
-        quote: "Winning at TECHNASIA'22 gave me the confidence and recognition that kickstarted my career in tech.",
-        image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
-      },
-    ],
+    image: "/previous_events/8.jpg",
+    title: "Data Science Meetup"
   },
 ];
+
+
+
 
 export const faqs = [
   {
