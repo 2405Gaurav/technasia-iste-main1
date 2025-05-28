@@ -9,7 +9,6 @@ import Image from "next/image";
 import { competitions } from "@/lib/constants";
 
 function CountdownTimer() {
-  // Set initial countdown to 24 hours
   const [timeLeft, setTimeLeft] = useState(24 * 60 * 60);
 
   useEffect(() => {
@@ -71,16 +70,16 @@ export function TimelineComponent() {
           animate={isInView ? "visible" : "hidden"}
           className="relative space-y-32"
         >
-          {/* Central timeline line */}
+          {/* Timeline line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-green-500" />
-          
+
           {competitions.map((comp, index) => (
             <motion.div
               key={comp.id}
               variants={itemVariants}
               className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
             >
-              {/* Dot on the timeline - centered */}
+              {/* Timeline dot */}
               <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
                 <div className="w-4 h-4 bg-green-500 rounded-full border-4 border-white" />
               </div>
@@ -102,13 +101,12 @@ export function TimelineComponent() {
                   <button className="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded transition">
                     View Details
                   </button>
-                  
                 </Link>
               </div>
 
               {/* Image Section */}
               <div
-                className={`relative w-full h-[690px] rounded-xl overflow-hidden shadow-lg border-4 border-green-600 transition-transform duration-300 hover:scale-105 ${
+                className={`relative w-full h-[690px] rounded-xl overflow-hidden shadow-lg border-4 border-green-600 transition-transform duration-300 hover:scale-105 hover:shadow-green-500/30 ${
                   index % 2 === 1 ? "lg:order-1" : "lg:order-2"
                 }`}
               >
@@ -116,7 +114,7 @@ export function TimelineComponent() {
                   src={comp.image}
                   alt={comp.title}
                   fill
-                  className="object-cover"
+                  className="object-contain p-4 bg-black"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />

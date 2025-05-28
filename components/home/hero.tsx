@@ -24,7 +24,7 @@ export function HeroSection() {
   }))
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br scroll-smooth">
       {/* Animated background grid */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.1)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black_70%,transparent_110%)]" />
@@ -81,7 +81,7 @@ export function HeroSection() {
           {/* Main title with word-by-word animation */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
             <div className="block">
-              {['TECH', 'ASIA'].map((word, index) => (
+              {['TECH', 'NISIA'].map((word, index) => (
                 <motion.span
                   key={word}
                   initial={{ opacity: 0, x: -50 }}
@@ -127,7 +127,7 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 1.3 }}
             className="text-gray-300 text-base md:text-lg mb-10 max-w-3xl mx-auto leading-relaxed"
           >
-            Join Asia&apos;s biggest tech festival celebrating innovation, creativity, and entrepreneurship. 
+            Join India&apos;s biggest tech festival celebrating innovation, creativity, and entrepreneurship. 
             Four days of competitions, workshops, and networking with industry leaders.
           </motion.p>
 
@@ -182,7 +182,7 @@ export function HeroSection() {
               className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-semibold px-6 py-3 rounded-full shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_25px_rgba(34,197,94,0.4)] transition-all duration-300 transform hover:scale-105"
               asChild
             >
-              <Link href="/register">
+              <Link href="#register">
                 Register Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -190,10 +190,10 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-green-400 text-green-400 hover:bg-green-400/10 hover:shadow-[0_0_15px_rgba(34,197,94,0.2)] font-semibold px-6 py-3 rounded-full backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
+              className="border-2 border-green-400 text-green-400 hover:bg-green-200/10 hover:shadow-[0_0_15px_rgba(34,197,94,0.2)] font-semibold px-6 py-3 rounded-full backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
               asChild
             >
-              <Link href="/competitions">Explore Competitions</Link>
+              <Link href="#timeline">Explore Competitions</Link>
             </Button>
           </motion.div>
         </motion.div>
