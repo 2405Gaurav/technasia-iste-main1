@@ -307,44 +307,69 @@ export const previousEvents = [
   {
     year: "2024",
     image: "/previous_events/1.jpg",
-    title: "Tech Fest 2024"
+    title: "Tech Fest 2024",
+    description: "An annual technology festival showcasing the latest innovations and projects by students and professionals.",
+    location: "Chandigarh University Campus",
+    date: "March 15-17, 2024"
   },
   {
     year: "2023",
     image: "/previous_events/2.jpg",
-    title: "Innovation Summit"
+    title: "Innovation Summit",
+    description: "A gathering of industry leaders, startups, and enthusiasts to discuss emerging trends and groundbreaking ideas.",
+    location: "Delhi Convention Center",
+    date: "November 10, 2023"
   },
   {
     year: "2023",
     image: "/previous_events/3.jpg",
-    title: "AI Conference"
+    title: "AI Conference",
+    description: "Exploring advancements in artificial intelligence, machine learning, and their impact on various industries.",
+    location: "Online Virtual Event",
+    date: "September 20-22, 2023"
   },
   {
     year: "2023",
     image: "/previous_events/4.jpg",
-    title: "Robotics Workshop"
+    title: "Robotics Workshop",
+    description: "Hands-on sessions teaching robotics fundamentals, programming, and building autonomous robots.",
+    location: "TechLab, Chandigarh",
+    date: "July 5-7, 2023"
   },
   {
     year: "2023",
     image: "/previous_events/5.jpg",
-    title: "Cybersecurity Talk"
+    title: "Cybersecurity Talk",
+    description: "Expert talks and panel discussions focusing on current cybersecurity threats and best defense practices.",
+    location: "Cyber Tower, New Delhi",
+    date: "May 18, 2023"
   },
   {
     year: "2023",
     image: "/previous_events/6.jpg",
-    title: "Blockchain Bootcamp"
+    title: "Blockchain Bootcamp",
+    description: "An intensive bootcamp covering blockchain technology, smart contracts, and decentralized apps development.",
+    location: "Innovation Hub, Mumbai",
+    date: "April 12-15, 2023"
   },
   {
     year: "2023",
     image: "/previous_events/7.jpg",
-    title: "IoT Expo"
+    title: "IoT Expo",
+    description: "Exhibition and talks on Internet of Things devices, applications, and future prospects.",
+    location: "Expo Center, Bangalore",
+    date: "February 22-24, 2023"
   },
   {
     year: "2022",
     image: "/previous_events/8.jpg",
-    title: "Data Science Meetup"
+    title: "Data Science Meetup",
+    description: "Community meetup for data scientists to network, share knowledge, and discuss recent data science trends.",
+    location: "Tech Park Auditorium, Pune",
+    date: "December 10, 2022"
   },
 ];
+
 
 
 

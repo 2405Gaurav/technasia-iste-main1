@@ -168,23 +168,21 @@ export function AboutContent() {
           ))}
         </div>
 
-       <Card
-  className="
-    cursor-pointer border border-green-500 bg-black/30 backdrop-blur-md p-8
-    flex items-center justify-center
-    transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,180,0.7)]
-    max-w-4xl mx-auto rounded-2xl
-  "
-  style={{ minHeight: "140px" }}
->
-  <CardContent className="p-0">
-    <p className="text-xl font-semibold text-green-400 drop-shadow-[0_0_6px_rgba(0,255,180,0.7)]">
-      TECHNASIA'25 celebrates India, its developers, and their spirit of innovation.
-    </p>
-  </CardContent>
-</Card>
-
-
+        <Card
+          className="
+            cursor-pointer border border-green-500 bg-black/30 backdrop-blur-md p-8
+            flex items-center justify-center
+            transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,180,0.7)]
+            max-w-4xl mx-auto rounded-2xl
+          "
+          style={{ minHeight: "140px" }}
+        >
+          <CardContent className="p-0">
+            <p className="text-xl font-semibold text-green-400 drop-shadow-[0_0_6px_rgba(0,255,180,0.7)]">
+              TECHNASIA'25 celebrates India, its developers, and their spirit of innovation.
+            </p>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );

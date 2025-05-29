@@ -2,10 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { useTheme } from "next-themes";
-import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { siteConfig } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -14,12 +11,13 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+import { motion } from "framer-motion";
 
 const navLinks = [
   { title: "Home", href: "home" },
   { title: "About", href: "about" },
   { title: "Timeline", href: "timeline" },
-  
   { title: "Sponsors", href: "sponsors" },
   { title: "Previous Events", href: "previous-events" },
   { title: "FAQs", href: "faqs" },
@@ -32,9 +30,8 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 50);
     };
-    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -42,48 +39,48 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out",
+        "fixed top-0 w-full z-50 transition-all duration-300",
         isScrolled
-          ? "bg-black/95 backdrop-blur-xl shadow-2xl border-b border-green-500/20 py-2"
-          : "bg-gradient-to-b from-black/80 via-black/40 to-transparent backdrop-blur-sm py-4"
+          ? "bg-black/80 backdrop-blur-md border-b border-white/10 py-2"
+          : "bg-transparent py-4"
       )}
     >
-      <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Logo Section */}
+      <div className="container mx-auto flex items-center justify-between h-16 px-4 md:px-6">
+        {/* Logo */}
         <ScrollLink
           to="home"
           spy={true}
           smooth={true}
           offset={-100}
           duration={500}
-          className="flex items-center gap-3 cursor-pointer select-none group"
+          className="flex items-center space-x-2 cursor-pointer select-none"
         >
-          <div className="relative">
-            <img 
-              src="/logo/logo_technisia.svg" 
-              alt="Technisia Logo" 
+          <motion.div
+            initial={{ rotate: -10 }}
+            animate={{ rotate: 10 }}
+            transition={{ repeat: Infinity, duration: 2, repeatType: "reverse" }}
+          >
+            <img
+              src="/logo/logo_technisia.svg"
+              alt="Technisia Logo"
               className={cn(
-                "transition-all duration-300 filter drop-shadow-lg group-hover:drop-shadow-xl",
-                isScrolled ? "h-12 w-12 sm:h-14 sm:w-14" : "h-16 w-16 sm:h-20 sm:w-20"
+                "block",
+                isScrolled ? "h-6 w-6 md:h-8 md:w-8" : "h-8 w-8 md:h-10 md:w-10"
               )}
             />
-            <div className="absolute inset-0 bg-green-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-          <div className="flex flex-col">
-            <span className={cn(
-              "text-green-400 font-black tracking-wider drop-shadow-lg transition-all duration-300 group-hover:text-green-300",
-              isScrolled ? "text-2xl sm:text-3xl" : "text-3xl sm:text-4xl"
-            )}>
-              {siteConfig.organisation}
-            </span>
-            <span className="text-xs text-gray-400 font-medium tracking-widest uppercase opacity-80">
-              Tech Festival
-            </span>
-          </div>
+          </motion.div>
+          <span
+            className={cn(
+              "font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-cyan-500 select-none",
+              isScrolled ? "text-lg md:text-xl" : "text-xl md:text-2xl"
+            )}
+          >
+            TECHNISIA
+          </span>
         </ScrollLink>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1">
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex space-x-1">
           {navLinks.map((link) => (
             <ScrollLink
               key={link.href}
@@ -94,85 +91,73 @@ export function Navbar() {
               duration={500}
               onSetActive={() => setActiveSection(link.href)}
               className={cn(
-                "relative px-4 py-2 text-sm font-semibold transition-all duration-300 cursor-pointer rounded-lg group",
+                "px-4 py-2 text-sm font-medium rounded-md transition-colors cursor-pointer select-none",
                 link.special
-                  ? "text-black bg-gradient-to-r from-green-400 to-green-500 hover:from-green-300 hover:to-green-400 shadow-lg hover:shadow-green-500/25 transform hover:scale-105"
+                  ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 shadow-lg hover:shadow-blue-600/40"
                   : activeSection === link.href
-                  ? "text-green-400"
-                  : "text-gray-300 hover:text-white"
+                    ? "text-purple-400 bg-purple-950/30"
+                    : "text-white/80 hover:text-white hover:bg-white/10"
               )}
             >
               {link.title}
-              {!link.special && (
-                <span className={cn(
-                  "absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-green-400 to-green-500 transition-all duration-300",
-                  activeSection === link.href ? "w-full" : "w-0 group-hover:w-full"
-                )} />
-              )}
             </ScrollLink>
           ))}
         </nav>
 
-        {/* Mobile Menu Button */}
-        <div className="block lg:hidden">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                aria-label="Menu" 
-                className="p-2 text-gray-300 hover:text-green-400 hover:bg-green-500/10 transition-all duration-300 rounded-lg border border-transparent hover:border-green-500/30"
-              >
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent className="bg-black/95 backdrop-blur-xl border-l border-green-500/30 w-80">
-              <SheetHeader className="border-b border-green-500/20 pb-4">
-                <SheetTitle className="text-green-400 text-xl font-bold flex items-center gap-2">
-                  <img 
-                    src="/logo/logo_technisia.svg" 
-                    alt="Technisia Logo" 
-                    className="h-8 w-8"
-                  />
-                  Menu
-                </SheetTitle>
-              </SheetHeader>
-              
-              {/* Mobile Navigation */}
-              <nav className="flex flex-col gap-2 mt-8">
-                {navLinks.map((link, index) => (
-                  <ScrollLink
-                    key={link.href}
-                    to={link.href}
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={500}
-                    className={cn(
-                      "flex items-center px-4 py-3 text-sm font-medium transition-all duration-300 cursor-pointer rounded-lg group relative overflow-hidden",
-                      link.special
-                        ? "text-black bg-gradient-to-r from-green-400 to-green-500 hover:from-green-300 hover:to-green-400 shadow-lg"
-                        : "text-gray-300 hover:text-white hover:bg-green-500/10 border border-transparent hover:border-green-500/30"
-                    )}
-                    style={{ animationDelay: `${index * 50}ms` }}
-                  >
-                    <span className="relative z-10">{link.title}</span>
-                    {!link.special && (
-                      <div className="absolute inset-0 bg-gradient-to-r from-green-500/0 via-green-500/5 to-green-500/0 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
-                    )}
-                  </ScrollLink>
-                ))}
-              </nav>
+        {/* Desktop Button */}
+        <Button
+          asChild
+          className="hidden md:flex bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white"
+        >
+          <a
+            href="mailto:contact@example.com"
+            className="cursor-pointer"
+          >
+            Contact Us
+          </a>
+        </Button>
 
-              {/* Mobile Footer */}
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="text-center text-xs text-gray-500 border-t border-green-500/20 pt-4">
-                  © 2024 {siteConfig.organisation}
-                </div>
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
+
+        {/* Mobile Menu */}
+        <Sheet>
+          <SheetTrigger asChild className="md:hidden">
+            <Button variant="ghost" size="icon" className="text-white">
+              <Menu className="h-5 w-5" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="bg-black/95 border-white/10 w-72">
+            <SheetHeader className="border-b border-white/20 pb-4">
+              <SheetTitle className="text-purple-400 text-xl font-bold flex items-center gap-2">
+                <img
+                  src="/logo/logo_technisia.svg"
+                  alt="Technisia Logo"
+                  className="h-8 w-8"
+                />
+                Menu
+              </SheetTitle>
+            </SheetHeader>
+            <nav className="flex flex-col gap-3 mt-6">
+              {navLinks.map((link) => (
+                <ScrollLink
+                  key={link.href}
+                  to={link.href}
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  className={cn(
+                    "px-4 py-3 rounded-md text-sm font-medium cursor-pointer select-none transition-colors",
+                    link.special
+                      ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg"
+                      : "text-white/80 hover:text-white hover:bg-white/10"
+                  )}
+                >
+                  {link.title}
+                </ScrollLink>
+              ))}
+            </nav>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );

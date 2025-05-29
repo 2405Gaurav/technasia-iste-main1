@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { ArrowRight, Calendar, MapPin, Users, Trophy, Code, Zap } from "lucide-react"
 import { siteConfig } from "@/lib/constants"
+import PlanetScene from '@/components/planet-3d/planet-3d';
 
 export function HeroSection() {
   const stats = [
@@ -24,7 +25,7 @@ export function HeroSection() {
   }))
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br scroll-smooth">
+    <div className="relative min-h-screen flex items-center justify-start overflow-hidden bg-gradient-to-br scroll-smooth px-8 md:px-16">
       {/* Animated background grid */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.1)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black_70%,transparent_110%)]" />
@@ -57,11 +58,19 @@ export function HeroSection() {
         </motion.div>
       ))}
 
+      {/* Planet scene - full screen width & height container, planet centered */}
+      <div className="hidden md:flex absolute inset-0 pointer-events-none z-10 justify-center items-center">
+        <div className="w-full h-full max-w-[1400px] max-h-[900px]">
+          <PlanetScene />
+        </div>
+      </div>
+
       {/* Main gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/60" style={{ zIndex: 2 }} />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-6xl text-center px-6" style={{ zIndex: 3 }}>
+      {/* Content container aligned left */}
+      <div className="relative z-20 max-w-3xl text-center mx-auto">
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -78,7 +87,7 @@ export function HeroSection() {
             <span className="text-sm font-medium text-green-400">Asia&apos;s Premier Tech Festival</span>
           </motion.div>
 
-          {/* Main title with word-by-word animation */}
+          {/* Main title */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
             <div className="block">
               {['TECH', 'NISIA'].map((word, index) => (
@@ -86,8 +95,8 @@ export function HeroSection() {
                   key={word}
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ 
-                    duration: 0.6, 
+                  transition={{
+                    duration: 0.6,
                     delay: 0.3 + index * 0.3,
                     ease: "easeOut"
                   }}
@@ -121,22 +130,17 @@ export function HeroSection() {
           </motion.p>
 
           {/* Description */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.3 }}
-            className="text-gray-300 text-base md:text-lg mb-10 max-w-3xl mx-auto leading-relaxed"
-          >
-            Join India&apos;s biggest tech festival celebrating innovation, creativity, and entrepreneurship. 
-            Four days of competitions, workshops, and networking with industry leaders.
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.3 }} className="text-green-400 text-lg font-semibold mb-10 max-w-xl leading-tight">
+            Experience India’s ultimate tech festival — innovate, compete, connect!
           </motion.p>
+
 
           {/* Stats section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.4 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 max-w-3xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 max-w-xl"
           >
             {stats.map((stat, index) => (
               <motion.div
@@ -179,7 +183,7 @@ export function HeroSection() {
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-semibold px-6 py-3 rounded-full shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_25px_rgba(34,197,94,0.4)] transition-all duration-300 transform hover:scale-105"
+              className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-semibold px-6  rounded-full shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_25px_rgba(34,197,94,0.4)] transition-all duration-300 transform hover:scale-105"
               asChild
             >
               <Link href="#register">
@@ -190,7 +194,7 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-green-400 text-green-400 hover:bg-green-200/10 hover:shadow-[0_0_15px_rgba(34,197,94,0.2)] font-semibold px-6 py-3 rounded-full backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
+              className="border-2 border-green-400 text-green-400 hover:bg-green-200/10  font-semibold px-6 py-3 rounded-full backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
               asChild
             >
               <Link href="#timeline">Explore Competitions</Link>
