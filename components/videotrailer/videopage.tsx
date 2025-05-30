@@ -11,19 +11,18 @@ interface VideoProps {
 
 export const Video = ({ className = "", order = "right", src }: VideoProps) => {
   return (
-    <section className="w-full py-16 bg-black text-white">
+    <section className="w-full py-16 text-white">
       <div className="max-w-7xl mx-auto px-6">
         <div
-          className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-            order === "right" ? "" : "lg:flex-row-reverse"
-          }`}
+          className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${order === "right" ? "" : "lg:flex-row-reverse"
+            }`}
         >
           {/* Left Side - About Section */}
           <div className="space-y-8">
             <div>
               <h3 className="text-green-500 text-lg font-medium mb-2">ABOUT THE EVENT</h3>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                Welcome to the Galactic<br />
+                Welcome to the Amazing<br />
                 <span className="text-green-500">TECHNISIA '25</span>
               </h2>
               <p className="text-gray-300 text-lg mb-8">
@@ -67,17 +66,23 @@ export const Video = ({ className = "", order = "right", src }: VideoProps) => {
                     <Play className="w-12 h-12 text-white" strokeWidth={1.5} />
                   </div>
                 </div>
-                <div className="w-full h-full bg-gray-800 flex items-center justify-center">
-                  <p className="text-gray-400 text-xl">Click to watch recap video</p>
+                <div className="flex items-center justify-center h-64 bg-gray-900 rounded-lg shadow-lg">
+                  <p
+                    className="text-4xl text-indigo-400 font-bold tracking-wide italic animate-pulse text-center"
+                    style={{ fontFamily: "'Orbitron', sans-serif" }}
+                  >
+                    Click it. Feel it. Live the Thrill!
+                  </p>
                 </div>
+
               </div>
             </DialogTrigger>
             <DialogContent className="max-w-4xl p-0 bg-black border-purple-500/20">
               <DialogTitle className="sr-only">Technisia 2024 Recap Video</DialogTitle>
               <div className="aspect-video">
-                <iframe 
-                  width="100%" 
-                  height="100%" 
+                <iframe
+                  width="100%"
+                  height="100%"
                   src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
                   title="Technisia 2024 Recap"
                   frameBorder="0"

@@ -4,11 +4,11 @@ import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { MapPin, Calendar, Users, Trophy, Clock, Star } from "lucide-react";
 
-// Mock competitions data - replace with your actual data
+
 const competitions = [
   {
     id: 1,
-    title: "AI Innovation Challenge",
+    title: "CU MUN",
     description: "Showcase your artificial intelligence prowess in this cutting-edge competition where innovation meets technology.",
     date: "March 15, 2025",
     time: "09:00 AM - 06:00 PM",
@@ -18,7 +18,7 @@ const competitions = [
     difficulty: "Advanced",
     category: "Technology",
     highlights: ["Machine Learning Models", "Neural Networks", "Real-world Problem Solving", "Industry Mentorship"],
-    image: ""  
+    image: "/competition/1.png"  
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const competitions = [
     difficulty: "Intermediate",
     category: "Programming",
     highlights: ["Data Structures", "Algorithm Optimization", "Competitive Programming", "Live Coding Sessions"],
-    image: "/api/placeholder/600/400"
+    image: "/competition/2.png"
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ const competitions = [
     difficulty: "Expert",
     category: "Robotics",
     highlights: ["Combat Robotics", "Mechanical Design", "Strategic Warfare", "Live Battle Arena"],
-    image: "/api/placeholder/600/400"
+    image: "/competition/5.png"
   },
   {
     id: 4,
@@ -60,8 +60,36 @@ const competitions = [
     difficulty: "Intermediate",
     category: "Web Development",
     highlights: ["Frontend Frameworks", "Backend Architecture", "Database Design", "UI/UX Excellence"],
-    image: "/api/placeholder/600/400"
-  }
+    image: "/competition/4.png"
+  },
+  {
+    id: 4,
+    title: "Web Dev Wizardry",
+    description: "Craft digital masterpieces and weave web magic in this comprehensive full-stack development competition.",
+    date: "March 18, 2025",
+    time: "09:30 AM - 05:30 PM",
+    location: "Digital Innovation Center",
+    participants: "120+ Developers",
+    prize: "₹40,000",
+    difficulty: "Intermediate",
+    category: "Web Development",
+    highlights: ["Frontend Frameworks", "Backend Architecture", "Database Design", "UI/UX Excellence"],
+    image: "/competition/6.png"
+  },
+  {
+    id: 4,
+    title: "Web Dev Wizardry",
+    description: "Craft digital masterpieces and weave web magic in this comprehensive full-stack development competition.",
+    date: "March 18, 2025",
+    time: "09:30 AM - 05:30 PM",
+    location: "Digital Innovation Center",
+    participants: "120+ Developers",
+    prize: "₹40,000",
+    difficulty: "Intermediate",
+    category: "Web Development",
+    highlights: ["Frontend Frameworks", "Backend Architecture", "Database Design", "UI/UX Excellence"],
+    image: "/competition/7.png"
+  },
 ];
 interface FlyingSpaceshipProps {
   right?: string;
@@ -630,6 +658,18 @@ export default function TimelineComponent() {
                   >
                     {comp.title.charAt(0)}
                   </motion.div>
+                  {comp.image && (
+  <motion.img
+    src={comp.image}
+    alt={comp.title}
+    className="absolute w-3/4 h-3/4 object-cover rounded-xl shadow-xl"
+    initial={{ opacity: 0.4, scale: 0.9 }}
+    whileHover={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.5 }}
+    style={{ zIndex: 0 }}
+  />
+)}
+
                   
                   {/* 3D Floating Objects */}
                   <motion.div

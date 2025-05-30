@@ -324,9 +324,36 @@ export default function TeamSection() {
                       >
                         {member.name.charAt(0)}
                       </motion.div>
+                       <motion.div
+                  className="absolute top-1/4 right-1/4 w-16 h-16 border border-green-400/40 rounded-full"
+                  animate={{
+                    scale: [1, 1.8, 1],
+                    opacity: [0.8, 0.2, 0.8],
+                    rotateZ: [0, 180, 360]
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <motion.div
+                    className="absolute inset-2 border border-green-300/60 rounded-full"
+                    animate={{
+                      scale: [1, 0.5, 1],
+                      opacity: [0.6, 1, 0.6]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  />
+                </motion.div>
+                
                       
                       {/* 3D Floating Elements */}
-                      <motion.div
+                      {/* <motion.div
                         className="absolute top-4 right-4 w-3 h-3 bg-green-400 rounded-full"
                         animate={{
                           translateZ: [0, 20, 0],
@@ -349,7 +376,7 @@ export default function TeamSection() {
                           repeat: Infinity,
                           ease: "linear",
                         }}
-                      />
+                      /> */}
                     </div>
                   )}
                   
@@ -427,7 +454,7 @@ export default function TeamSection() {
                 </div>
 
                 {/* 3D Glow Effect */}
-                <motion.div
+                {/* <motion.div
                   className="absolute -inset-1 bg-gradient-to-r from-green-600 via-green-400 to-green-600 rounded-2xl opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500 -z-10"
                   animate={{
                     rotateZ: [0, 360],
@@ -437,7 +464,7 @@ export default function TeamSection() {
                     repeat: Infinity,
                     ease: "linear",
                   }}
-                />
+                /> */}
               </motion.div>
             </motion.div>
           ))}
