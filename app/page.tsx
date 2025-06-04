@@ -1,7 +1,7 @@
 import { HeroSection } from "@/components/home/hero";
 import { HighlightsSection } from "@/components/home/highlights";
 import TeamSection from "@/components/about/team-section";
-import TimelineComponent  from "@/components/timeline/timeline-component";
+import TimelineComponent from "@/components/timeline/timeline-component";
 import SponsorGrid from "@/components/sponsors/sponsors-grid";
 import { RegistrationForm } from "@/components/register/registration-form";
 import { PreviousEventsGrid } from "@/components/previous-events/previous-events-grid";
@@ -17,7 +17,6 @@ export default function Home() {
       </section>
       <section id="video">
         <Video
-          
           src="/videos/event-highlights.mp4"
         />
       </section>
@@ -27,7 +26,7 @@ export default function Home() {
       </section>
 
       <section id="about">
-        
+
         <TeamSection />
       </section>
 

@@ -75,7 +75,7 @@ export function Navbar() {
               isScrolled ? "text-lg md:text-xl" : "text-xl md:text-2xl"
             )}
           >
-            TECHNISIA
+            TECHNISIA'25
           </span>
         </ScrollLink>
 

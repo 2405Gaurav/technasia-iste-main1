@@ -18,7 +18,7 @@ const competitions = [
     difficulty: "Advanced",
     category: "Technology",
     highlights: ["Machine Learning Models", "Neural Networks", "Real-world Problem Solving", "Industry Mentorship"],
-    image: "/competition/1.png"  
+    image: "/competition/1.png"
   },
   {
     id: 2,
@@ -100,7 +100,7 @@ interface FlyingSpaceshipProps {
   direction?: "leftToRight" | "rightToLeft";
 }
 
-export  function FlyingSpaceship({
+export function FlyingSpaceship({
   top = "top-[30%]",
   left = "left-[10%]",
   duration = 20,
@@ -223,7 +223,7 @@ function CountdownTimer() {
   const seconds = timeLeft % 60;
 
   return (
-    <motion.div 
+    <motion.div
       className="text-center text-green-400 font-mono text-3xl font-bold mb-12 relative"
       animate={{
         textShadow: ["0 0 10px rgba(34,197,94,0.8)", "0 0 20px rgba(34,197,94,1)", "0 0 10px rgba(34,197,94,0.8)"]
@@ -235,7 +235,7 @@ function CountdownTimer() {
       }}
     >
       <div className="flex justify-center space-x-4">
-        <motion.div 
+        <motion.div
           className="bg-green-900/30 px-4 py-2 rounded-lg border border-green-500/50"
           whileHover={{ scale: 1.1, rotateY: 15 }}
           style={{ transformStyle: "preserve-3d" }}
@@ -243,7 +243,7 @@ function CountdownTimer() {
           {hours.toString().padStart(2, "0")}
           <div className="text-xs text-green-300">HOURS</div>
         </motion.div>
-        <motion.div 
+        <motion.div
           className="bg-green-900/30 px-4 py-2 rounded-lg border border-green-500/50"
           whileHover={{ scale: 1.1, rotateY: 15 }}
           style={{ transformStyle: "preserve-3d" }}
@@ -251,7 +251,7 @@ function CountdownTimer() {
           {minutes.toString().padStart(2, "0")}
           <div className="text-xs text-green-300">MINS</div>
         </motion.div>
-        <motion.div 
+        <motion.div
           className="bg-green-900/30 px-4 py-2 rounded-lg border border-green-500/50"
           whileHover={{ scale: 1.1, rotateY: 15 }}
           style={{ transformStyle: "preserve-3d" }}
@@ -277,8 +277,8 @@ export default function TimelineComponent() {
   };
 
   const itemVariants = {
-    hidden: { 
-      y: 100, 
+    hidden: {
+      y: 100,
       opacity: 0,
       scale: 0.8,
       rotateX: 25
@@ -288,7 +288,7 @@ export default function TimelineComponent() {
       opacity: 1,
       scale: 1,
       rotateX: 0,
-      transition: { 
+      transition: {
         duration: 0.8,
         ease: [0.25, 0.46, 0.45, 0.94]
       },
@@ -298,10 +298,10 @@ export default function TimelineComponent() {
   return (
     <section className="py-20 text-white w-full relative overflow-hidden">
       {/* Flying Spaceship */}
-       <FlyingSpaceship top="top-[10%]" left="left-[5%]" duration={18} color="green" direction="leftToRight" />
-  <FlyingSpaceship top="top-[35%]" left="left-[90%]" duration={22} color="blue" direction="rightToLeft" />
-  <FlyingSpaceship top="top-[50%]" left="left-[30%]" duration={15} color="purple" direction="leftToRight" />
-      
+      <FlyingSpaceship top="top-[10%]" left="left-[5%]" duration={18} color="green" direction="leftToRight" />
+      <FlyingSpaceship top="top-[35%]" left="left-[90%]" duration={22} color="blue" direction="rightToLeft" />
+      <FlyingSpaceship top="top-[50%]" left="left-[30%]" duration={15} color="purple" direction="leftToRight" />
+
       {/* Enhanced 3D Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Floating 3D Cubes */}
@@ -320,7 +320,7 @@ export default function TimelineComponent() {
           }}
           style={{ transformStyle: "preserve-3d" }}
         />
-        
+
         <motion.div
           className="absolute top-1/3 right-16 w-12 h-12 bg-green-500/20 rounded-full"
           animate={{
@@ -347,7 +347,7 @@ export default function TimelineComponent() {
             ease: "linear",
           }}
         />
-        
+
 
         {/* Animated Grid Particles */}
         <div className="absolute inset-0 opacity-5">
@@ -374,14 +374,14 @@ export default function TimelineComponent() {
       </div>
 
       <div className="max-w-[75rem] mx-auto px-6 relative z-10">
-        <motion.div 
+        <motion.div
           className="text-center max-w-4xl mx-auto mb-16"
           initial={{ opacity: 0, y: 50, rotateX: 30 }}
           whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <motion.h1 
+          <motion.h1
             className="text-5xl lg:text-6xl font-bold mb-6 text-green-400"
             animate={{
               textShadow: [
@@ -394,18 +394,18 @@ export default function TimelineComponent() {
           >
             Event Schedule
           </motion.h1>
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-300 mb-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
-            Mark your calendar for these exciting competitions at TECHNASIA&apos;25. 
+            Mark your calendar for these exciting competitions at TECHNASIA&apos;25.
             Join us for an unforgettable journey through innovation, technology, and excellence.
           </motion.p>
           <CountdownTimer />
         </motion.div>
-<FlyingSpaceship />
+        <FlyingSpaceship />
         <motion.div
           ref={ref}
           variants={containerVariants}
@@ -414,7 +414,7 @@ export default function TimelineComponent() {
           className="relative space-y-32"
         >
           {/* Enhanced Timeline line with 3D effect */}
-          <motion.div 
+          <motion.div
             className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-2 bg-gradient-to-b from-green-400 via-green-500 to-green-600 rounded-full"
             initial={{ scaleY: 0 }}
             animate={{ scaleY: 1 }}
@@ -429,21 +429,21 @@ export default function TimelineComponent() {
               key={comp.id}
               variants={itemVariants}
               className="relative grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
-              whileHover={{ 
+              whileHover={{
                 scale: 1.02,
                 transition: { duration: 0.3 }
               }}
             >
               {/* Enhanced Timeline dot with 3D effect */}
-              <motion.div 
+              <motion.div
                 className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"
-                whileHover={{ 
+                whileHover={{
                   scale: 1.5,
                   rotateZ: 360,
                   transition: { duration: 0.6 }
                 }}
               >
-                <motion.div 
+                <motion.div
                   className="w-8 h-8 bg-gradient-to-br from-green-400 to-green-600 rounded-full border-4 border-white shadow-lg relative"
                   animate={{
                     boxShadow: [
@@ -460,18 +460,18 @@ export default function TimelineComponent() {
               </motion.div>
 
               {/* Enhanced Text Section */}
-              <motion.div 
+              <motion.div
                 className={`${index % 2 === 1 ? "lg:order-2" : "lg:order-1"} px-4 relative`}
-                whileHover={{ 
+                whileHover={{
                   x: index % 2 === 1 ? -10 : 10,
                   transition: { duration: 0.3 }
                 }}
                 style={{ transformStyle: "preserve-3d" }}
               >
                 {/* 3D Floating Badge */}
-                <motion.div 
+                <motion.div
                   className="mb-6 inline-block"
-                  whileHover={{ 
+                  whileHover={{
                     rotateY: 15,
                     rotateX: 10,
                     scale: 1.05
@@ -491,9 +491,9 @@ export default function TimelineComponent() {
                   </div>
                 </motion.div>
 
-                <motion.h2 
+                <motion.h2
                   className="text-4xl font-bold mb-4 text-green-400"
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.05,
                     textShadow: "0 0 20px rgba(34,197,94,1)",
                     transition: { duration: 0.3 }
@@ -501,8 +501,8 @@ export default function TimelineComponent() {
                 >
                   {comp.title}
                 </motion.h2>
-                
-                <motion.p 
+
+                <motion.p
                   className="text-lg text-gray-300 mb-6 leading-relaxed"
                   whileHover={{ color: "#d1d5db" }}
                 >
@@ -511,9 +511,9 @@ export default function TimelineComponent() {
 
                 {/* Enhanced Info Grid */}
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  <motion.div 
+                  <motion.div
                     className="flex items-center text-green-300 bg-green-900/20 p-3 rounded-lg border border-green-500/30"
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.05,
                       backgroundColor: "rgba(34, 197, 94, 0.1)",
                       rotateY: 5
@@ -527,9 +527,9 @@ export default function TimelineComponent() {
                     </div>
                   </motion.div>
 
-                  <motion.div 
+                  <motion.div
                     className="flex items-center text-green-300 bg-green-900/20 p-3 rounded-lg border border-green-500/30"
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.05,
                       backgroundColor: "rgba(34, 197, 94, 0.1)",
                       rotateY: -5
@@ -543,9 +543,9 @@ export default function TimelineComponent() {
                     </div>
                   </motion.div>
 
-                  <motion.div 
+                  <motion.div
                     className="flex items-center text-green-300 bg-green-900/20 p-3 rounded-lg border border-green-500/30"
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.05,
                       backgroundColor: "rgba(34, 197, 94, 0.1)",
                       rotateY: 5
@@ -559,9 +559,9 @@ export default function TimelineComponent() {
                     </div>
                   </motion.div>
 
-                  <motion.div 
+                  <motion.div
                     className="flex items-center text-green-300 bg-green-900/20 p-3 rounded-lg border border-green-500/30"
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.05,
                       backgroundColor: "rgba(34, 197, 94, 0.1)",
                       rotateY: -5
@@ -576,9 +576,9 @@ export default function TimelineComponent() {
                   </motion.div>
                 </div>
 
-                <motion.div 
+                <motion.div
                   className="flex items-center text-green-300 mb-6 bg-green-900/20 p-3 rounded-lg border border-green-500/30"
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.02,
                     backgroundColor: "rgba(34, 197, 94, 0.1)"
                   }}
@@ -598,7 +598,7 @@ export default function TimelineComponent() {
                       <motion.div
                         key={idx}
                         className="text-sm text-gray-300 bg-green-900/10 px-3 py-2 rounded-full border border-green-500/20"
-                        whileHover={{ 
+                        whileHover={{
                           scale: 1.05,
                           backgroundColor: "rgba(34, 197, 94, 0.15)",
                           color: "#bbf7d0"
@@ -615,7 +615,7 @@ export default function TimelineComponent() {
 
                 <motion.button
                   className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white py-3 px-8 rounded-lg transition-all duration-300 relative overflow-hidden group"
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.05,
                     rotateY: 5,
                     boxShadow: "0 10px 25px rgba(34, 197, 94, 0.3)"
@@ -635,10 +635,9 @@ export default function TimelineComponent() {
 
               {/* Enhanced Image Section with Increased Height and 3D Objects */}
               <motion.div
-                className={`relative w-full h-[650px] rounded-2xl overflow-hidden shadow-2xl border-2 border-green-500/50 ${
-                  index % 2 === 1 ? "lg:order-1" : "lg:order-2"
-                }`}
-                whileHover={{ 
+                className={`relative w-full h-[650px] rounded-2xl overflow-hidden shadow-2xl border-2 border-green-500/50 ${index % 2 === 1 ? "lg:order-1" : "lg:order-2"
+                  }`}
+                whileHover={{
                   scale: 1.05,
                   rotateY: index % 2 === 1 ? -8 : 8,
                   rotateX: -5,
@@ -650,7 +649,7 @@ export default function TimelineComponent() {
                 <div className="w-full h-full bg-gradient-to-br from-green-900/20 to-black/40 flex items-center justify-center relative">
                   <motion.div
                     className="text-8xl font-bold text-green-400/50"
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.2,
                       rotateZ: 10,
                       color: "rgba(34, 197, 94, 0.8)"
@@ -659,18 +658,19 @@ export default function TimelineComponent() {
                     {comp.title.charAt(0)}
                   </motion.div>
                   {comp.image && (
-  <motion.img
-    src={comp.image}
-    alt={comp.title}
-    className="absolute w-3/4 h-3/4 object-cover rounded-xl shadow-xl"
-    initial={{ opacity: 0.4, scale: 0.9 }}
-    whileHover={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.5 }}
-    style={{ zIndex: 0 }}
-  />
-)}
+                    <motion.img
+                      src={comp.image}
+                      alt={comp.title}
+                      className="absolute w-[90%] h-[90%] object-cover rounded-xl shadow-xl"
+                      initial={{ opacity: 1, scale: 1 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5 }}
+                      style={{ zIndex: 0 }}
+                    />
+                  )}
 
-                  
+
+
                   {/* 3D Floating Objects */}
                   <motion.div
                     className="absolute top-16 left-12 w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg shadow-lg"
@@ -687,7 +687,7 @@ export default function TimelineComponent() {
                     }}
                     style={{ transformStyle: "preserve-3d" }}
                   />
-                  
+
                   <motion.div
                     className="absolute bottom-20 right-16 w-16 h-16 border-4 border-green-400/60 rounded-full"
                     animate={{
@@ -704,7 +704,7 @@ export default function TimelineComponent() {
                   >
                     <div className="absolute inset-4 bg-green-400/40 rounded-full" />
                   </motion.div>
-                  
+
                   <motion.div
                     className="absolute top-1/3 right-8 w-8 h-20 bg-gradient-to-t from-green-500 to-green-300 rounded-full"
                     animate={{
@@ -719,7 +719,7 @@ export default function TimelineComponent() {
                     }}
                     style={{ transformStyle: "preserve-3d" }}
                   />
-                  
+
                   <motion.div
                     className="absolute bottom-1/3 left-8 w-10 h-10 bg-green-400/30 transform rotate-45"
                     animate={{
@@ -734,7 +734,7 @@ export default function TimelineComponent() {
                     }}
                     style={{ transformStyle: "preserve-3d" }}
                   />
-                  
+
                   {/* Orbiting Spheres */}
                   <motion.div
                     className="absolute top-1/2 left-1/2 w-32 h-32 transform -translate-x-1/2 -translate-y-1/2"
@@ -775,9 +775,9 @@ export default function TimelineComponent() {
                     />
                   </motion.div>
                 </div>
-                
+
                 {/* 3D Overlay Effects */}
-                <motion.div 
+                <motion.div
                   className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   initial={{ rotateX: 90 }}
                   whileHover={{ rotateX: 0 }}
@@ -809,7 +809,7 @@ export default function TimelineComponent() {
                     ease: "linear",
                   }}
                 />
-                
+
                 {/* Additional 3D Geometric Shapes */}
                 <motion.div
                   className="absolute top-8 left-1/3 w-6 h-6 bg-gradient-to-br from-cyan-400 to-blue-500 transform rotate-45"
@@ -826,7 +826,7 @@ export default function TimelineComponent() {
                   }}
                   style={{ transformStyle: "preserve-3d" }}
                 />
-                
+
                 <motion.div
                   className="absolute bottom-12 right-1/3 w-8 h-2 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"
                   animate={{
@@ -842,7 +842,7 @@ export default function TimelineComponent() {
                   }}
                   style={{ transformStyle: "preserve-3d" }}
                 />
-                
+
                 {/* Hexagonal 3D Shape */}
                 <motion.div
                   className="absolute top-1/2 left-8 w-10 h-10 border-2 border-yellow-400/60"
@@ -861,7 +861,7 @@ export default function TimelineComponent() {
                     ease: "linear",
                   }}
                 />
-                
+
                 {/* Pulsing Energy Rings */}
                 <motion.div
                   className="absolute top-1/4 right-1/4 w-16 h-16 border border-green-400/40 rounded-full"

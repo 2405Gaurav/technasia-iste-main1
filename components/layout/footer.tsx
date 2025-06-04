@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GraduationCap, Twitter, Github, Linkedin, Facebook, Mail, Phone, MapPin, ExternalLink } from "lucide-react";
+import {  Twitter, Github, Linkedin, Facebook, Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 import { siteConfig, navLinks } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";

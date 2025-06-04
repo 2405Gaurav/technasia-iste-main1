@@ -307,23 +307,23 @@ export const previousEvents = [
   {
     year: "2024",
     image: "/previous_events/1.jpg",
-    title: "Tech Fest 2024",
+    title: "CU-MUN 2024",
     description: "An annual technology festival showcasing the latest innovations and projects by students and professionals.",
     location: "Chandigarh University Campus",
     date: "March 15-17, 2024"
   },
   {
-    year: "2023",
+    year: "2024",
     image: "/previous_events/2.jpg",
-    title: "Innovation Summit",
+    title: "Mind Spirint",
     description: "A gathering of industry leaders, startups, and enthusiasts to discuss emerging trends and groundbreaking ideas.",
-    location: "Delhi Convention Center",
+    location: "Chandigarh University Campus",
     date: "November 10, 2023"
   },
   {
-    year: "2023",
+    year: "2024",
     image: "/previous_events/3.jpg",
-    title: "AI Conference",
+    title: "Threejs Workshop",
     description: "Exploring advancements in artificial intelligence, machine learning, and their impact on various industries.",
     location: "Online Virtual Event",
     date: "September 20-22, 2023"

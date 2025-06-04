@@ -76,19 +76,46 @@ export function PreviousEventsGrid() {
             A visual walkthrough of all our previous events.
           </p>
         </div>
+        <div className="w-full grid grid-cols-6 sm:grid-cols-8 md:grid-cols-12 gap-2 auto-rows-[120px]">
+  {previousEvents.map((event, index) => {
+    // Create varied sizes for collage effect
+    const getColSpan = (index: number) => {
+      const patterns = [3, 2, 4, 2, 3, 5, 2, 3, 4, 2, 3, 2];
+      return patterns[index % patterns.length];
+    };
+    
+    const getRowSpan = (index: number) => {
+      const patterns = [2, 1, 2, 2, 1, 2, 1, 2, 1, 2, 1, 2];
+      return patterns[index % patterns.length];
+    };
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          {previousEvents.map((event, index) => (
-            <div key={index} className="relative h-48 rounded-lg overflow-hidden border border-white/20">
-              <Image
-                src={event.image}
-                alt={`Gallery Image ${index + 1}`}
-                fill
-                className="object-cover hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-          ))}
-        </div>
+    return (
+              <div 
+        key={index} 
+        className={`relative rounded-lg overflow-hidden border border-white/20 shadow-lg
+                   col-span-${getColSpan(index)} row-span-${getRowSpan(index)}
+                   hover:shadow-xl hover:shadow-white/10 hover:-translate-y-1 
+                   transition-all duration-300 cursor-pointer group`}
+        style={{
+          gridColumn: `span ${getColSpan(index)}`,
+          gridRow: `span ${getRowSpan(index)}`
+        }}
+      >
+        <Image
+          src={event.image}
+          alt={`Gallery Image ${index + 1}`}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+        
+        {/* Subtle hover overlay */}
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+      </div>
+    );
+  })}
+</div>
+
+        
       </div>
     </section>
   );

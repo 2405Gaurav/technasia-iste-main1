@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -127,8 +127,8 @@ export  function FlyingSpaceship({
 export function HeroSection() {
   const stats = [
     { icon: Users, label: "Participants", value: "5000+" },
-    { icon: Trophy, label: "Competitions", value: "12+" },
-    { icon: Code, label: "Projects", value: "500+" },
+    { icon: Trophy, label: "Competitions", value: "20+" },
+    { icon: Code, label: "Projects", value: "100+" },
     { icon: Zap, label: "Workshops", value: "25+" }
   ]
 
@@ -204,7 +204,7 @@ export function HeroSection() {
             className="inline-flex items-center px-4 py-2 mb-8 bg-green-500/10 border border-green-500/30 rounded-full backdrop-blur-sm"
           >
             <Zap className="h-4 w-4 mr-2 text-green-400" />
-            <span className="text-sm font-medium text-green-400">Asia&apos;s Premier Tech Festival</span>
+            <span className="text-sm font-medium text-green-400">North India&apos;s Premier Tech Festival</span>
           </motion.div>
 
           {/* Main title */}
