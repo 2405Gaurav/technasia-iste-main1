@@ -307,7 +307,7 @@ export const previousEvents = [
   {
     year: "2024",
     image: "/previous_events/1.jpg",
-    title: "CU-MUN 2024",
+    title: "CU-MUN ",
     description: "An annual technology festival showcasing the latest innovations and projects by students and professionals.",
     location: "Chandigarh University Campus",
     date: "March 15-17, 2024"
@@ -368,6 +368,47 @@ export const previousEvents = [
     location: "Tech Park Auditorium, Pune",
     date: "December 10, 2022"
   },
+  {
+    year: "2022",
+    image: "/previous_events/9.jpg",
+    title: "Data Science Meetup",
+    description: "Community meetup for data scientists to network, share knowledge, and discuss recent data science trends.",
+    location: "Tech Park Auditorium, Pune",
+    date: "December 10, 2022"
+  },
+  {
+    year: "2022",
+    image: "/previous_events/10.jpg",
+    title: "Data Science Meetup",
+    description: "Community meetup for data scientists to network, share knowledge, and discuss recent data science trends.",
+    location: "Tech Park Auditorium, Pune",
+    date: "December 10, 2022"
+  },
+  {
+    year: "2022",
+    image: "/previous_events/11.jpg",
+    title: "Data Science Meetup",
+    description: "Community meetup for data scientists to network, share knowledge, and discuss recent data science trends.",
+    location: "Tech Park Auditorium, Pune",
+    date: "December 10, 2022"
+  },
+  {
+    year: "2022",
+    image: "/previous_events/12.jpg",
+    title: "Data Science Meetup",
+    description: "Community meetup for data scientists to network, share knowledge, and discuss recent data science trends.",
+    location: "Tech Park Auditorium, Pune",
+    date: "December 10, 2022"
+  },
+  {
+    year: "2022",
+    image: "/previous_events/13.jpg",
+    title: "Data Science Meetup",
+    description: "Community meetup for data scientists to network, share knowledge, and discuss recent data science trends.",
+    location: "Tech Park Auditorium, Pune",
+    date: "December 10, 2022"
+  },
+
 ];
 
 

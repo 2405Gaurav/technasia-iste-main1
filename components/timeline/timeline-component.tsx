@@ -9,7 +9,7 @@ const competitions = [
   {
     id: 1,
     title: "CU MUN",
-    description: "Showcase your artificial intelligence prowess in this cutting-edge competition where innovation meets technology.",
+      description: "Showcase your artificial intelligence prowess in this cutting-edge competition where innovation meets technology.",
     date: "March 15, 2025",
     time: "09:00 AM - 06:00 PM",
     location: "Main Auditorium, Tech Block",
@@ -661,7 +661,7 @@ export default function TimelineComponent() {
                     <motion.img
                       src={comp.image}
                       alt={comp.title}
-                      className="absolute w-[90%] h-[90%] object-cover rounded-xl shadow-xl"
+                      className="absolute w-[95%] h-[98%] object-cover rounded-xl shadow-xl"
                       initial={{ opacity: 1, scale: 1 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5 }}
